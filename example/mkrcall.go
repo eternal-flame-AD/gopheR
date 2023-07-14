@@ -78,6 +78,7 @@ func R_init_example(DllInfo *C.DllInfo) {
 		{C.CString("Add"), (C.DL_FUNC)(C.Add), 2, [4]byte{0,0,0,0}},
 		{C.CString("Sum"), (C.DL_FUNC)(C.Sum), 2, [4]byte{0,0,0,0}},
 		{C.CString("ColumnSum"), (C.DL_FUNC)(C.ColumnSum), 2, [4]byte{0,0,0,0}},
+		{nil, nil, 0, [4]byte{0,0,0,0}},
 	}
 	C.R_registerRoutines(DllInfo, nil, &callMethodDef[0], nil, nil)
 	C.R_useDynamicSymbols(DllInfo, 0)

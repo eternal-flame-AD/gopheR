@@ -144,6 +144,7 @@ func WriteModule(writer io.Writer, module *Module) error {
 				f.WrapperName(), f.WrapperName(), len(f.Params))
 
 		}
+		fmt.Fprintf(&buf, "\t\t{nil, nil, 0, [4]byte{0,0,0,0}},\n")
 		fmt.Fprintf(&buf, "\t}\n")
 		fmt.Fprintf(&buf, "\tC.R_registerRoutines(DllInfo, nil, &callMethodDef[0], nil, nil)\n")
 		fmt.Fprintf(&buf, "\tC.R_useDynamicSymbols(DllInfo, 0)\n")
